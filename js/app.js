@@ -1,6 +1,6 @@
 class BoredActivity {
     content = "";
-    getNewActivity() {
+    getNewActivity(url) {
       let ajax = new XMLHttpRequest();
       let scoped = this;
       ajax.onreadystatechange = function() {
@@ -14,12 +14,16 @@ class BoredActivity {
             document.getElementById("activity-text").innerHTML= "error"; 
           }
       }
-      ajax.open("GET","http://www.boredapi.com/api/activity/", true);
+      ajax.open("GET",url, true);
       ajax.send(); 
     }
 }
 
 document.getElementById("get-activity-button").addEventListener("click", function(){
      let myActivty = new BoredActivity();
-     myActivty.getNewActivity();
+     myActivty.getNewActivity("http://www.boredapi.com/api/activity/");
+});
+document.getElementById("get-rec-activity-button").addEventListener("click", function(){
+    let myActivty = new BoredActivity();
+    myActivty.getNewActivity("http://www.boredapi.com/api/activity?type=recreational");
 });

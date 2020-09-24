@@ -10,7 +10,7 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
     .activity-button {
         transition: all 0.3s ease-in-out;
         border-radius: 10px;
